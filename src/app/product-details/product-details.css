@@ -1,0 +1,78 @@
+/* Product Details */
+.product {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 25px;
+
+  .product-details {
+  display: flex;
+  align-items: center;
+}
+}
+
+.product-details img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 20px;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-info .name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.product-info .description {
+  font-size: 14px;
+  color: #555;
+}
+
+.product-info .category {
+  font-size: 13px;
+  color: #777;
+  margin-top: 5px;
+}
+
+/* Price and Buy Button */
+.price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.price div {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.price .cta {
+  padding: 8px 15px;
+  background-color: #8B4513;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.price .cta:hover {
+  background-color: #A0522D;
+}
+
+.discount {
+  font-size: 14px;
+  color: #FF6347; /* Tomato color for discount */
+  margin-top: 5px;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+  font-size: 18px;
+}
