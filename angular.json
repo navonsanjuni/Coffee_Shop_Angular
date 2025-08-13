@@ -19,10 +19,8 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+              "src/assets",
+              "src/favicon.ico"
             ],
             "styles": [
               "src/styles.css"
@@ -59,7 +57,8 @@
               "buildTarget": "coffee-shop:build:production"
             },
             "development": {
-              "buildTarget": "coffee-shop:build:development"
+              "buildTarget": "coffee-shop:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
@@ -76,10 +75,8 @@
             ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+              "src/assets",
+              "src/favicon.ico"
             ],
             "styles": [
               "src/styles.css"
@@ -88,5 +85,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

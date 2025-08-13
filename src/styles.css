@@ -1,1 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
+.bold{
+  font-weight: bold;
+}
+
+.brown{
+  color: #4f2d1d;
+}
+
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fef9f4;
+}
+
+a {
+  color: inherit;
+}
+.bold{
+  font-weight: bold;
+}
+
+.brown{
+  color: #4f2d1d;
+}
+
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fef9f4;
+}
+
+a {
+  color: inherit;
+}

@@ -1,29 +1,10 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ProductDetails } from '../product-details/product-details';
-import { IProduct } from './product';
-import { CartService } from '../cart';
-import { ProductService } from './product-service';
-import { HttpClientModule } from '@angular/common/http';
+const express = require('express');
+const cors = require('cors');
+const app = express();
+app.use(cors());
+app.use(express.json());
 
-@Component({
-  selector: 'app-catalog',
-  standalone: true,
-  imports: [CommonModule, ProductDetails, HttpClientModule],
-  templateUrl: './catalog.html',
-  styleUrl: './catalog.css'
-})
-export class Catalog implements OnInit {
-
-  products: IProduct[] = [];
-  filter: string = '';
-  private cartSvc: CartService = inject(CartService);
-
-  constructor(
-    private cartService: CartService,
-    private productSvc: ProductService
-  ) {
-    this.products = [
+const products = [
     {
       id: 1,
       name: "Espresso",
@@ -197,21 +178,15 @@ export class Catalog implements OnInit {
     }
   ]
 ;
-  }
 
-  ngOnInit() {
-    this.productSvc.getProducts().subscribe(products => {
-      this.products = products;
-    });
-  }
+app.get('/api/products', (req, res) => {
+  res.json(products);
+});
 
-  addToCart(product: IProduct) {
-    this.cartSvc.add(product);
-  }
+app.post('/api/products', (req, res) => {
+  res.json(products);
+})
 
-  getFilteredProducts() {
-    return this.filter === ''
-      ? this.products
-      : this.products.filter((product: IProduct) => product.category === this.filter);
-  }
-}
+app.listen(8081, () => {
+  console.log('API server running on http://localhost:8081');
+});
