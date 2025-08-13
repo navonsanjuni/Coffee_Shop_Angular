@@ -1,72 +1,317 @@
+:root {
+  --primary-color: #a0522d;
+  --secondary-color: #d2691e;
+  --bg-color: #fff8f0;
+  --text-color: #4b2e2e;
+  --light-text: #666;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.user-banner {
+  background: var(--white);
+  padding: 12px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.user-info, .datetime {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--light-text);
+}
+
+.user-info i, .datetime i {
+  color: var(--primary-color);
+}
+
 .coffee-container {
-  padding: 40px;
-  background-color: #fff8f0;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.hero-section {
+  text-align: center;
+  margin-bottom: 60px;
+  padding: 60px 20px;
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+  url('https://wallpapers.com/coffee-shop-background') center/cover;
+  color: var(--white);
+  border-radius: 15px ;
+}
+
+.hero-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.featured-menu {
+  margin-bottom: 60px;
+}
+
+.featured-menu h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--primary-color);
+  font-size: 1.8rem;
 }
 
 .menu {
   list-style: none;
-  padding: 0;
   display: flex;
   justify-content: space-around;
-  margin-bottom: 40px;
+  gap: 30px;
+  padding: 0;
 }
 
 .part {
   text-align: center;
   text-decoration: none;
-  color: #4b2e2e;
+  color: var(--text-color);
+  display: block;
+  transition: transform 0.3s ease;
 }
 
-.part img {
-  width: 120px;
-  height: 120px;
+.part:hover {
+  transform: translateY(-5px);
+}
+
+.image-wrapper {
+  position: relative;
+  overflow: hidden;
   border-radius: 50%;
+  width: 180px;
+  height: 180px;
+  margin-bottom: 15px;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(160, 82, 45, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.overlay span {
+  color: var(--white);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.image-wrapper:hover .overlay {
+  opacity: 1;
+}
+
+.image-wrapper:hover img {
+  transform: scale(1.1);
+}
+
+.drink-name {
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: var(--primary-color);
+}
+
+.drink-price {
+  color: var(--secondary-color);
+  font-weight: 500;
 }
 
 .white-paper {
   display: flex;
   align-items: center;
   gap: 30px;
-  background-color: #fefefe;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  background-color: var(--white);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  margin-bottom: 60px;
 }
 
 .white-paper img {
-  width: 200px;
+  width: 250px;
   height: auto;
-  border-radius: 8px;
+  border-radius: 10px;
+  object-fit: cover;
 }
 
 .text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex: 1;
 }
 
 .header-text {
-  font-size: 20px;
+  font-size: 1.5rem;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  color: var(--primary-color);
 }
 
 .sub-text p {
   margin: 0;
-  font-size: 16px;
+  font-size: 1.1rem;
+  color: var(--light-text);
 }
 
-.large-text {
-  font-size: 18px;
-  margin-top: 10px;
-  color: #a0522d;
+.blog-tag {
+  display: inline-block;
+  background: var(--bg-color);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: var(--secondary-color);
+  margin: 15px 0;
 }
 
 .learn-more {
   text-decoration: none;
-  color: #d2691e;
-  font-weight: bold;
-  margin-top: 10px;
+  color: var(--secondary-color);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease;
+}
+
+.learn-more:hover {
+  color: var(--primary-color);
+}
+
+.special-offers {
+  text-align: center;
+}
+
+.special-offers h2 {
+  color: var(--primary-color);
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+}
+
+.offers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 20px;
+}
+
+.offer-card {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 15px;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.offer-card:hover {
+  transform: translateY(-5px);
+}
+
+.discount-badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: var(--secondary-color);
+  color: var(--white);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.offer-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.offer-card p {
+  color: var(--light-text);
+  margin-bottom: 15px;
+}
+
+.price {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .white-paper {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .white-paper img {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .user-banner {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+  }
+
+  .hero-section {
+    padding: 40px 20px;
+  }
+
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .coffee-container {
+    padding: 20px 15px;
+  }
+
+  .image-wrapper {
+    width: 150px;
+    height: 150px;
+  }
+
+  .header-text {
+    font-size: 1.3rem;
+  }
+
+  .sub-text p {
+    font-size: 1rem;
+  }
 }

@@ -2,9 +2,10 @@ import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductDetails } from '../product-details/product-details';
 import { IProduct } from './product';
-import { CartService } from '../cart';
+import { CartService } from '../cart/cart-service';
 import { ProductService } from './product-service';
 import { HttpClientModule } from '@angular/common/http';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-catalog',
@@ -21,7 +22,8 @@ export class Catalog implements OnInit {
 
   constructor(
     private cartService: CartService,
-    private productSvc: ProductService
+    private productSvc: ProductService,
+    private router: Router
   ) {
     this.products = [
     {
@@ -207,6 +209,7 @@ export class Catalog implements OnInit {
 
   addToCart(product: IProduct) {
     this.cartSvc.add(product);
+    this.router.navigate(['/cart'])
   }
 
   getFilteredProducts() {
