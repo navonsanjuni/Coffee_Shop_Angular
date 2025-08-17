@@ -12,12 +12,9 @@
 <div class="user-banner">
   <div class="user-info">
     <i class="fas fa-user-circle"></i>
-    <span>Welcome, @navonsanjuni</span>
+    <span>Welcome, Sanjuni!</span>
   </div>
-  <div class="datetime">
-    <i class="far fa-clock"></i>
-    <span>2025-08-13 06:03:09 UTC</span>
-  </div>
+
 </div>
 
 <div class="coffee-container">
@@ -30,39 +27,63 @@
     <h2>Featured Drinks</h2>
     <ul class="menu">
       <li>
-        <a class="part">
+        <a routerLink="/catalog" [queryParams] = "{filter:'Hot Coffee'}" class="part">
           <div class="image-wrapper">
             <img src="assets/images/espresso.jpg" alt="Espresso" />
             <div class="overlay">
-              <span>View Details</span>
+              <span>Browse Collection</span>
             </div>
           </div>
-          <div class="drink-name">ESPRESSO</div>
-          <div class="drink-price">$3.99</div>
+          <div class="drink-name">Hot Coffee</div>
+          <div class="drink-price">$139 .99</div>
         </a>
       </li>
       <li>
-        <a class="part">
+        <a routerLink="/catalog" [queryParams] = "{filter:'Iced Coffee'}" class="part">
           <div class="image-wrapper">
             <img src="assets/images/latte.jpg" alt="Latte" />
             <div class="overlay">
-              <span>View Details</span>
+              <span>Browse Collection</span>
             </div>
           </div>
-          <div class="drink-name">LATTE</div>
-          <div class="drink-price">$4.99</div>
+          <div class="drink-name">Iced Coffee</div>
+          <div class="drink-price">$299.99</div>
         </a>
       </li>
       <li>
-        <a class="part">
+        <a routerLink="/catalog" [queryParams] = "{filter:'Flavored Coffee'}" class="part">
           <div class="image-wrapper">
             <img src="assets/images/cappuccino.jpg" alt="Cappuccino" />
             <div class="overlay">
-              <span>View Details</span>
+              <span>Browse Collection</span>
             </div>
           </div>
-          <div class="drink-name">CAPPUCCINO</div>
-          <div class="drink-price">$4.49</div>
+          <div class="drink-name">Flavored Coffee</div>
+          <div class="drink-price">$99.49</div>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/catalog" [queryParams] = "{filter:'International Coffee'}" class="part">
+          <div class="image-wrapper">
+            <img src="assets/images/cafe_breve.jpg" alt="Cappuccino" />
+            <div class="overlay">
+              <span>Browse Collection</span>
+            </div>
+          </div>
+          <div class="drink-name">International Coffee</div>
+          <div class="drink-price">$199.49</div>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/catalog" [queryParams] = "{filter:'International Coffee'}" class="part">
+          <div class="image-wrapper">
+            <img src="assets/images/mazagran.jpg" alt="Mazagran" />
+            <div class="overlay">
+              <span>Browse Collection</span>
+            </div>
+          </div>
+          <div class="drink-name">Speciality</div>
+          <div class="drink-price">$149.49</div>
         </a>
       </li>
     </ul>

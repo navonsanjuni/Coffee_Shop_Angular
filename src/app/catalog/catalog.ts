@@ -5,12 +5,12 @@ import { IProduct } from './product';
 import { CartService } from '../cart/cart-service';
 import { ProductService } from './product-service';
 import { HttpClientModule } from '@angular/common/http';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router, RouterModule} from '@angular/router';
 
 @Component({
   selector: 'app-catalog',
   standalone: true,
-  imports: [CommonModule, ProductDetails, HttpClientModule],
+  imports: [CommonModule, ProductDetails, HttpClientModule, RouterModule],
   templateUrl: './catalog.html',
   styleUrl: './catalog.css'
 })
@@ -23,7 +23,8 @@ export class Catalog implements OnInit {
   constructor(
     private cartService: CartService,
     private productSvc: ProductService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) {
     this.products = [
     {
@@ -205,6 +206,10 @@ export class Catalog implements OnInit {
     this.productSvc.getProducts().subscribe(products => {
       this.products = products;
     });
+
+   this.route.queryParams.subscribe((params) => {
+     this.filter=params['filter'] ?? '';
+   })
   }
 
   addToCart(product: IProduct) {

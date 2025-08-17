@@ -1,31 +1,31 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
+import { CommonModule } from '@angular/common';
 import { Home } from './home/home';
 import { Catalog } from './catalog/catalog';
-import { Siteheader } from './siteheader/siteheader';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { CommonModule } from '@angular/common';
-import {Cart} from './cart/cart';
+import { Cart } from './cart/cart';
+import { HttpClientModule } from '@angular/common/http';
+import {Siteheader} from './siteheader/siteheader';
 
 @Component({
   selector: 'app-root',
-  standalone: true,  // Add standalone: true
+  standalone: true,
   imports: [
-    CommonModule,   // Add CommonModule
+    CommonModule,
     RouterOutlet,
+    RouterLink,
+    RouterLinkActive,
     Home,
     Catalog,
-    Siteheader,
+    Cart,
     HttpClientModule,
-    Cart
+    Siteheader
   ],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
   protected readonly title = signal('coffee-shop');
-  currentDateTime = '2025-08-13 08:13:35';
+  currentDateTime = '2025-08-13 09:49:41';
   currentUser = 'navonsanjuni';
-
-  constructor(private http: HttpClient) {}
 }

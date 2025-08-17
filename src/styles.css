@@ -32,6 +32,7 @@ body {
   background-color: #fef9f4;
 }
 
-a {
-  color: inherit;
+a.active {
+  padding-bottom: 5px;
+  border-bottom: 2px solid #4f2d1d;
 }

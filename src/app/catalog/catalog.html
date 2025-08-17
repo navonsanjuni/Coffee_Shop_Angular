@@ -1,19 +1,19 @@
 <div class="container">
   <!-- Filters -->
   <div class="filters">
-    <a class="button bold" (click)="filter='Hot Coffee'">Hot Coffee</a>
-    <a class="button bold" (click)="filter='Iced Coffee'">Iced Coffee</a>
-    <a class="button bold" (click)="filter='Flavored Coffee'">Flavored Coffee</a>
-    <a class="button bold" (click)="filter='International Coffee'">International Coffee</a>
-    <a class="button bold" (click)="filter='Specialty'">Specialty</a>
-    <a class="button bold" (click)="filter=''">All</a>
+    <a class="button bold" routerLink="/catalog" [queryParams]="{filter: 'Hot Coffee'}">Hot Coffee</a>
+    <a class="button bold" routerLink="/catalog" [queryParams]="{filter: 'Iced Coffee'}">Iced Coffee</a>
+    <a class="button bold" routerLink="/catalog" [queryParams]="{filter: 'Flavored Coffee'}">Flavored Coffee</a>
+    <a class="button bold" routerLink="/catalog" [queryParams]="{filter: 'International Coffee'}">International Coffee</a>
+    <a class="button bold" routerLink="/catalog" [queryParams]="{filter: 'Specialty'}">Specialty</a>
+    <a class="button bold" routerLink="/catalog/">All</a>
   </div>
 
   <!-- Products -->
   <ul class="products">
     <li class="product-item" *ngFor="let product of getFilteredProducts()">
-    <app-product-details 
-      [product] = "product" 
+    <app-product-details
+      [product] = "product"
       (buy) = "addToCart(product)">
     </app-product-details>
     </li>
